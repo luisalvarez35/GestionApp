@@ -1,2 +1,0 @@
-INSERT INTO gestionapp.productos (id, descripcion, imagen, nombre, precio_compra, precio_venta, stock, categorias_id, proveedores_id) VALUES (9, 'asdasd', '', 'Producto1', 1, 2, 1, 1, 7);
-INSERT INTO gestionapp.productos (id, descripcion, imagen, nombre, precio_compra, precio_venta, stock, categorias_id, proveedores_id) VALUES (10, 'asfdasfds', '', 'Producto2', 2, 4, 4, 2, 8);

@@ -1,2 +1,0 @@
-INSERT INTO gestionapp.clientes (id, apellidos, cod_zip, comentarios, direccion, email, imagen, movil, nombre, pais, poblacion, telefono) VALUES (5, 'Cliente1', 1234, 'asdas', 'Cliente1', 'Cliente1@gmail.com', '', 12312312, 'Cliente1', 'Cliente1', 'Cliente1', 4546485);
-INSERT INTO gestionapp.clientes (id, apellidos, cod_zip, comentarios, direccion, email, imagen, movil, nombre, pais, poblacion, telefono) VALUES (6, 'Cliente2', 1234, 'Cliente2', 'Cliente2', 'Cliente2@gmail.com', '', 12312312, 'Cliente2', 'Cliente2', 'Cliente2', 4546485);

@@ -94,8 +94,8 @@
                         <tbody>
                         <tr th:each="productos : ${productos}">
                             <td><img
-                                    th:src="${not (#strings.isEmpty(productos.imagen))} ? ${productos.imagen} : 'http://placehold.it/48x48'"
-                                    class="img-responsive" alt="imagen" /></td>
+                                    th:src="${not (#strings.isEmpty(productos.imagen))} ? ${productos.imagen} : 'https://via.placeholder.com/48x48.png'"
+                                    class="img-responsive" style="width: 48px;height: 48px" alt="imagen" /></td>
                             <td th:text="${productos.id}"></td>
                             <td th:text="${productos.nombre}"></td>
                             <td th:text="${productos.descripcion}"></td>

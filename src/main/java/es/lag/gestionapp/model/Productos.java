@@ -23,9 +23,9 @@ public class Productos {
 
     private String imagen;
 
-    private Integer precioCompra;
+    private Float precioCompra;
 
-    private Integer precioVenta;
+    private Float precioVenta;
 
     private Integer stock;
 
