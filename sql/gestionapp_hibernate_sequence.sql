@@ -1,0 +1,1 @@
+INSERT INTO gestionapp.hibernate_sequence (next_val) VALUES (13);

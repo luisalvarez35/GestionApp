@@ -1,0 +1,2 @@
+INSERT INTO gestionapp.empleados (id, apellidos, cod_zip, comentarios, direccion, email, imagen, movil, nombre, password, poblacion, telefono) VALUES (3, 'Empleado1', 1234, 'asdfas', 'Empleado1', 'asdasf@asdasfd.es', '', 1234567, 'Empleado1', '123445677', 'Empleado1', 12345678);
+INSERT INTO gestionapp.empleados (id, apellidos, cod_zip, comentarios, direccion, email, imagen, movil, nombre, password, poblacion, telefono) VALUES (4, 'Empleado2', 1234, 'Empleado2', 'Empleado2', 'Empleado2@gmail.com', '', 12312312, 'Empleado2', 'Empleado2', 'Empleado2', 1234567);

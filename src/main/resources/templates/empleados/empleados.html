@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <title>GestionApp</title>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css' th:href="@{/webjars/bootstrap/css/bootstrap.css}" rel="stylesheet">
+        <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css' rel='stylesheet'>
+    <!--
+        <link href="../../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+    -->
+        <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+
+    </head>
+
+    <body oncontextmenu='return false' class='snippet-body'>
+
+        <div id="body-pd">
+            <header class="header" id="header">
+                <div class="header_toggle"> <i class='fa fa-bars' id="header-toggle"></i> </div>
+            </header>
+                <div class="l-navbar" id="nav-bar">
+                    <nav class="nav">
+                        <div>
+                            <a href="#" th:href="@{/}" class="nav_logo"> <i class='fa fa-g nav_logo-icon'></i>
+                                <span class="nav_logo-name">GestionApp</span>
+                            </a>
+                            <div class="nav_list">
+
+                                <a href="#" th:href="@{/empleados}" class="nav-link color">
+                                    <i class="fa fa-user nav_icon"></i>
+                                    <span class="nav_name">Empleados</span>
+                                </a>
+                                <a href="#" th:href="@{/clientes}" class="nav-link color">
+                                    <i class="fa fa-address-book nav_icon"></i>
+                                    <span class="nav_name">Clientes</span>
+                                </a>
+                                <a href="#" th:href="@{/proveedores}" class="nav-link color">
+                                    <i class="fa fa-dolly nav_icon"></i>
+                                    <span class="nav_name">Proveedores</span>
+                                </a>
+                                <a href="#" th:href="@{/productos}" class="nav-link color">
+                                    <i class="fa fa-barcode nav_icon"></i>
+                                    <span class="nav_name">Productos</span>
+                                </a>
+                                <a href="#" th:href="@{/categorias}" class="nav-link color">
+                                    <i class="fa fa-tags nav_icon"></i>
+                                    <span class="nav_name">Categorias</span>
+                                </a>
+                                <a href="#" th:href="@{/pedidosClientes}" class="nav-link color">
+                                    <i class="fa fa-cart-flatbed"></i>
+                                    <span class="nav_name">Pedidos</span>
+                                </a>
+                                <a href="#" th:href="@{/albaranes}" class="nav-link color">
+                                    <i class="fa fa-clipboard-list nav_icon"></i>
+                                    <span class="nav_name">Albaranes</span>
+                                </a>
+                                <a href="#" th:href="@{/facturas}" class="nav-link color">
+                                    <i class="fa fa-file-invoice nav_icon"></i>
+                                    <span class="nav_name">Facturas</span>
+                                </a>
+
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+
+                <!--Container Main start-->
+                <div class="height-100 bg-white">
+
+                    <div class="pull-right">
+                        <a href="formEmpleados.html" th:href="@{/empleados/nuevo}"
+                           class="btn btn-primary">Nuevo Empleado</a>
+
+                    </div>
+
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Id</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellidos</th>
+                            <th scope="col">Direccion</th>
+                            <th scope="col">Poblacion</th>
+                            <th scope="col">Codigo Postal</th>
+                            <th scope="col">Telefono</th>
+                            <th scope="col">Movil</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Comentarios</th>
+                            <th scope="col">Password</th>
+                            <th scope="col">Operaciones</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="empleados : ${empleados}">
+                            <td><img
+                                    th:src="${not (#strings.isEmpty(empleados.imagen))} ? ${empleados.imagen} : 'http://placehold.it/48x48'"
+                                    class="img-responsive" alt="imagen" /></td>
+                            <td th:text="${empleados.id}"></td>
+                            <td th:text="${empleados.nombre}"></td>
+                            <td th:text="${empleados.apellidos}"></td>
+                            <td th:text="${empleados.direccion}"></td>
+                            <td th:text="${empleados.poblacion}"></td>
+                            <td th:text="${empleados.codZip}"></td>
+                            <td th:text="${empleados.telefono}"></td>
+                            <td th:text="${empleados.movil}"></td>
+                            <td th:text="${empleados.email}"></td>
+                            <td th:text="${empleados.comentarios}"></td>
+                            <td th:text="${empleados.password}"></td>
+                            <td class="operaciones">
+                                <a href="#" th:href="@{/empleados/editar/{id}(id=${empleados.id})}"
+                                   class="btn btn-primary">Editar</a>
+                                <a th:if="${empleados.pedidosClientes.isEmpty()}" href="#" th:href="@{/empleados/borrar/{id}(id=${empleados.id})}"
+                                   class="btn btn-danger">Borrar</a>
+
+
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+        </div>
+            <!--Container Main end-->
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" th:src="@{/webjars/bootstrap/js/bootstrap.boundle.js}"></script>
+
+            <script type='text/Javascript'>document.addEventListener("DOMContentLoaded", function(event) {
+
+                const showNavbar = (toggleId, navId, bodyId, headerId) =>{
+                const toggle = document.getElementById(toggleId),
+                nav = document.getElementById(navId),
+                bodypd = document.getElementById(bodyId),
+                headerpd = document.getElementById(headerId)
+
+                // Validate that all variables exist
+                if(toggle && nav && bodypd && headerpd){
+                toggle.addEventListener('click', ()=>{
+                // show navbar
+                nav.classList.toggle('show')
+                // change icon
+                toggle.classList.toggle('fa-x')
+                // add padding to body
+                bodypd.classList.toggle('body-pd')
+                // add padding to header
+                headerpd.classList.toggle('body-pd')
+                })
+                }
+                }
+
+                showNavbar('header-toggle','nav-bar','body-pd','header')
+
+                /*===== LINK ACTIVE =====*/
+                const linkColor = document.querySelectorAll('.nav_link')
+
+                function colorLink(){
+                if(linkColor){
+                linkColor.forEach(l=> l.classList.remove('active'))
+                ////////this.classList.add('active')
+                }
+                }
+                linkColor.forEach(l=> l.addEventListener('click', colorLink))
+
+                // Your code to run since DOM is loaded and ready
+                });</script>
+
+    </body>
+
+</html>

@@ -1,0 +1,76 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title>GestionApp</title>
+		<link rel="stylesheet" href="../../../static/css/factura.css" th:href="@{/css/factura.css}">
+	</head>
+	<body>
+		<header>
+			<h1>Factura</h1>
+			<address>
+				<p th:text="${facturas.direccionCliente}"></p>
+			</address>
+
+		</header>
+		<article>
+			<h1>Recipient</h1>
+			<address>
+				<p>GESTION<br>App</p>
+			</address>
+			<table class="meta">
+				<tr>
+					<th>Factura #</th>
+					<td th:text="${facturas.id}"></td>
+				</tr>
+				<tr>
+					<th>Fecha</th>
+					<td th:text="${facturas.fecha}"></td>
+				</tr>
+			</table>
+			<table class="inventory">
+				<thead>
+				<tr>
+					<th>Producto</th>
+					<th>Descripcion</th>
+					<th>Precio</th>
+					<th>Cantidad</th>
+					<th>Total</th>
+
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="lineasFactura : ${lineasFactura}">
+
+					<td th:text="${#strings.abbreviate(lineasFactura.producto,22)}"></td>
+					<td th:text="${#strings.abbreviate(lineasFactura.descripcion,22)}"></td>
+					<td th:text="${lineasFactura.precio}"></td>
+					<td th:text="${lineasFactura.cantidad}"></td>
+					<td th:with="result2=${( lineasFactura.precio * lineasFactura.cantidad )}">
+						<span th:text="${#numbers.formatDecimal(result2,1,2) + '€'}"></span>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+			<table class="balance">
+				<tr>
+					<th>Base Imponible</th>
+					<td th:text="${facturas.baseImponible + '€'}"></td>
+				</tr>
+				<tr>
+					<th>IVA</th>
+					<td th:text="${facturas.iva + '%'}"></td>
+				</tr>
+				<tr>
+					<th>Total</th>
+					<td th:text="${facturas.total + '€'}"></td>
+				</tr>
+			</table>
+		</article>
+		<aside>
+			<h1>Notas</h1>
+			<div contenteditable>
+				<p><td th:text="${facturas.descripcion}"></td></p>
+			</div>
+		</aside>
+	</body>
+</html>

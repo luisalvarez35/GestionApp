@@ -1,0 +1,2 @@
+INSERT INTO gestionapp.proveedores (id, cod_proveedor, comentarios, contacto, direccion, email, imagen, nif_cif, nombre, pais) VALUES (7, 1, '12312', 123123, 'Proveedor1', 'asfasfas@gmail.com', '', 123123, 'Proveedor1', 'Proveedor1');
+INSERT INTO gestionapp.proveedores (id, cod_proveedor, comentarios, contacto, direccion, email, imagen, nif_cif, nombre, pais) VALUES (8, 2, 'Proveedor2', 1111111, 'Proveedor2', 'Proveedor2@gmail.com', '', 11111111, 'Proveedor2', 'Proveedor2');

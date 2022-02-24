@@ -1,0 +1,39 @@
+version: "3.7"
+services:
+  mysql_db:
+    image: mysql
+    container_name: mysql_db
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: gestionapp
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+    volumes:
+      - ./db-data:/var/lib/mysql
+    networks:
+      - GestionApp
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: on-failure
+    ports:
+      - "9000:8080"
+    links:
+      - mysql_db
+    depends_on:
+      - mysql_db
+    environment:
+      DATABASE_HOST: mysql_db
+      DATABASE_USER: admin
+      DATABASE_PASSWORD: admin
+      DATABASE_NAME: gestionApp
+      DATABASE_PORT: 3306
+    networks:
+      - GestionApp
+networks:
+  GestionApp:
