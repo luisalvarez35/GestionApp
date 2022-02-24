@@ -75,11 +75,6 @@ public class LineasPedidoController {
             //salvamos linea de pedido
             lineasPedidoService.save(lineasPedido);
 
-            //actualizamos pedido
-
-            //calculamos total de la linea
-            Float total_linea = lineasPedido.getPrecio()*lineasPedido.getCantidad();
-
             //recuparamos pedido
             PedidosClientes pedido = pedidosClientesService.findById(id);
 
@@ -92,7 +87,7 @@ public class LineasPedidoController {
 
             for (int i=0;i<lineasPedidos.size();i++) {
 
-                float precio = lineasPedidos.get(i).getPrecio();
+                float precio = lineasPedidos.get(i).getProductos().getPrecioVenta();
                 float cantidad = lineasPedidos.get(i).getCantidad();
                 float totalLinea = precio * cantidad;
 
@@ -146,7 +141,7 @@ public class LineasPedidoController {
             //actualizamos pedido
 
             //calculamos total de la linea
-            Float total_linea = lineasPedido.getPrecio()*lineasPedido.getCantidad();
+            //Float total_linea = lineasPedido.getProductos().getPrecioVenta()*lineasPedido.getCantidad();
 
             //recuparamos pedido
             PedidosClientes pedido = pedidosClientesService.findById(id);
@@ -160,7 +155,7 @@ public class LineasPedidoController {
 
                 for (int i=0;i<lineasPedidos.size();i++) {
 
-                    float precio = lineasPedidos.get(i).getPrecio();
+                    float precio = lineasPedidos.get(i).getProductos().getPrecioVenta();
                     float cantidad = lineasPedidos.get(i).getCantidad();
                     float totalLinea = precio * cantidad;
 

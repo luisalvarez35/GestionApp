@@ -1,0 +1,5 @@
+insert into gestionapp.productos (id, descripcion, imagen, nombre, precio_compra, precio_venta, stock, categorias_id, proveedores_id)
+values  (16, 'Portatil MSI', 'https://tiendaselectron.com/82048-large_default/portatil-msi-gf65-thing-de-396cm--156--10ser-1256xes-i7---16gb---512gb-ssd.jpg', 'Portatil MSI', 990, 1000, 20, 13, 10),
+        (20, 'Teclado', 'https://m.media-amazon.com/images/I/713cnVfXwCL._AC_SX679_.jpg', 'Teclado Steelseries', 50, 70, 10, 12, 10),
+        (21, 'ordenador de sobremesa', 'https://m.media-amazon.com/images/I/61OlgVczMqL._AC_SY450_.jpg', 'Sobremesa Asus', 400, 500, 2, 14, 10),
+        (26, 'raton inalambrico', 'http://img.pccomponentes.com/articles/39/395797/1400-steelseries-rival-3-wireless-raton-gaming-inalambrico-18000-dpi-negro.jpg', 'Ration Steelseries', 40, 50, 5, 12, 24);

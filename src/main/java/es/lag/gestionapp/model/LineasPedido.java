@@ -15,8 +15,6 @@ public class LineasPedido {
 
     private String descripcion;
 
-    private Float precio;
-
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "pedidos_clientes_id", nullable = false)

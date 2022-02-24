@@ -13,7 +13,10 @@ Para este despliegue se ha optado por un despliegue con docker a partir de un em
 
 3.Ejecutar el archivo " docker-compose.yml ". ==> ``docker-compose up -d``
 
-4.La aplicacion se encontrara en localhost:9000
+4.La aplicacion se encontrara en ``localhost:9000``
+
+5.El servicio rest de productos se encontrara en ``localhost:9000/productos/rest`` y el de de filtrado por id en ``localhost:9000/productos/rest/(introducir id despues de la barra)``.
+
 
 ###Despliegue en detalle
 
@@ -68,7 +71,9 @@ Para este despliegue de la aplicacion se usara Intellij y docker para la base de
 
 6.Ejecutar GestionAppAplication en Intellij.
 
-5.La aplicacion se encontrara en localhost:8080
+5.La aplicacion se encontrara en ``localhost:8080``.
+
+6.El servicio rest de productos se encontrara en ``localhost:8080/productos/rest`` y el de de filtrado por id en ``localhost:8080/productos/rest/(introducir id despues de la barra)``.
 
 ###Despliegue en detalle
 

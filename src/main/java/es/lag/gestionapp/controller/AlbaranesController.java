@@ -76,7 +76,7 @@ public class AlbaranesController {
             lineaAlbaran.setProducto(lineaPedido.getProductos().getNombre());
             lineaAlbaran.setCantidad(lineaPedido.getCantidad());
             lineaAlbaran.setDescripcion(lineaPedido.getDescripcion());
-            lineaAlbaran.setPrecio(lineaPedido.getPrecio());
+            lineaAlbaran.setPrecio(lineaPedido.getProductos().getPrecioVenta());
             lineaAlbaran.setAlbaranes(albaran);
 
             lineasAlbaranService.save(lineaAlbaran);

@@ -1,6 +1,7 @@
 package es.lag.gestionapp.controller;
 
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import es.lag.gestionapp.model.Productos;
 import es.lag.gestionapp.service.ProductosService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,13 +23,17 @@ public class restController {
 
     @CrossOrigin
     @GetMapping("productos/rest")
-    public List<Productos> listadoProductos() {
+    @JsonCreator
+    public ResponseEntity<List<Productos>> listadoProductos() {
 
-        return productosService.findAll();
-        /*List<Productos> productos = productosService.findAll();
+        List<Productos> productos = productosService.findAll();
 
-        return productos.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
-                .orElseGet(() -> new ResponseEntity<>(null, HttpStatus.NOT_FOUND));*/
+        if (productos.isEmpty()) {
+            return new ResponseEntity<List<Productos>>(HttpStatus.NO_CONTENT);
+        }
+
+        return new ResponseEntity<List<Productos>>(productos, HttpStatus.OK);
+
     }
 
     @CrossOrigin

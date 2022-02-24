@@ -1,4 +1,5 @@
 package es.lag.gestionapp.model;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -18,6 +19,7 @@ public class Categorias {
     private String nombre;
 
     private String descripcion;
+
 
     @OneToMany(mappedBy = "categorias", cascade = {CascadeType.MERGE}, orphanRemoval = false)
     private List<Productos> productos = new ArrayList<>();

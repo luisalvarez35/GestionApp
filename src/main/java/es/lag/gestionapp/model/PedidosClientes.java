@@ -1,4 +1,5 @@
 package es.lag.gestionapp.model;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 

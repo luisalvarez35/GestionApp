@@ -74,7 +74,7 @@ public class FacturasController {
             lineaFactura.setProducto(lineaPedido.getProductos().getNombre());
             lineaFactura.setCantidad(lineaPedido.getCantidad());
             lineaFactura.setDescripcion(lineaPedido.getDescripcion());
-            lineaFactura.setPrecio(lineaPedido.getPrecio());
+            lineaFactura.setPrecio(lineaPedido.getProductos().getPrecioVenta());
             lineaFactura.setFacturas(factura);
 
             lineasFacturaService.save(lineaFactura);

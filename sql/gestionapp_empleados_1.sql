@@ -1,0 +1,5 @@
+insert into gestionapp.empleados (id, apellidos, cod_zip, comentarios, direccion, email, imagen, movil, nombre, password, poblacion, telefono)
+values  (6, 'Arroyo Sanchez', 28154, 'Un empleado', 'Calle empleado1 N12', 'Empleado1@gmail.com', 'https://www.crecepersonas.es/templates/yootheme/cache/employee-373f770f.png', 654123123, 'Jose', 'Empleado1234', 'Madrid', 987050102),
+        (7, 'Garcia Alonso', 28026, 'Una empleada', 'Calle de Maria N4', 'Maria1@gmail.com', 'https://st2.depositphotos.com/47577860/47713/v/1600/depositphotos_477139938-stock-illustration-employee-female-lady-icon-filled.jpg', 321050408, 'Maria', 'Maria1234', 'Madid', 987020305),
+        (8, 'Gonzalez Garcia', 28012, 'Una empleada', 'Calle de Carla N5', 'Carla1@gmail.com', 'https://media.istockphoto.com/vectors/contact-avatar-vector-id517155537?s=2048x2048', 456123124, 'Carla', 'Carla1234', 'Madrid', 654078050),
+        (9, 'Perez Vega', 28017, 'un empleado', 'Calle de Carlos N1', 'Carlos1@Gmail.com', 'https://media.istockphoto.com/vectors/user-avatarman-a-man-with-a-moustache-vector-id948490416', 655040103, 'Carlos', 'Carlos1234', 'Madrid', 655090807);

@@ -1,0 +1,4 @@
+insert into gestionapp.proveedores (id, cod_proveedor, comentarios, contacto, direccion, email, imagen, nif_cif, nombre, pais)
+values  (10, 1545, 'proveedor', 321456456, 'Direccion proveedor1', 'proveedor1@Gmail.com', 'https://factoryfy.es/wp-content/uploads/rediseno-logotipo-soluciones-informaticas.jpg', 156123215, 'Proveedor1', 'Madrid'),
+        (23, 1214, 'cometario del Proveedor2', 45612514, 'Calle del Proveedor2', '1262545', 'https://w7.pngwing.com/pngs/133/80/png-transparent-information-computer-icons-empresa-data-protection-service-logo-copyright.png', 15454825, 'Proveedor2', 'Alemania'),
+        (24, 7894, 'cometario', 123123123, 'Calle de Proveedor3', 'Proveedor3@gmail.com', 'https://i.pinimg.com/originals/84/c1/07/84c10712e2128a76ec83eb6abf5ed55f.jpg', 4562154, 'Proveedor3', 'Francia');

@@ -1,4 +1,5 @@
 package es.lag.gestionapp.model;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -34,6 +35,7 @@ public class Proveedores {
     private String comentarios;
 
     private String imagen;
+
 
     @OneToMany(mappedBy = "proveedores", cascade = {CascadeType.MERGE}, orphanRemoval = false)
     private List<Productos> productos = new ArrayList<>();
