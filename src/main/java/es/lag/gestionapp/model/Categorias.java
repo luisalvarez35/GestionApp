@@ -21,6 +21,6 @@ public class Categorias {
     private String descripcion;
 
 
-    @OneToMany(mappedBy = "categorias", cascade = {CascadeType.MERGE}, orphanRemoval = false)
+    @OneToMany(mappedBy = "categorias", cascade = {CascadeType.MERGE})
     private List<Productos> productos = new ArrayList<>();
 }

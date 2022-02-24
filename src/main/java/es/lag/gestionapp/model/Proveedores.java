@@ -37,7 +37,7 @@ public class Proveedores {
     private String imagen;
 
 
-    @OneToMany(mappedBy = "proveedores", cascade = {CascadeType.MERGE}, orphanRemoval = false)
+    @OneToMany(mappedBy = "proveedores", cascade = {CascadeType.MERGE})
     private List<Productos> productos = new ArrayList<>();
 
 }

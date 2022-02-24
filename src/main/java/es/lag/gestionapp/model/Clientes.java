@@ -40,7 +40,7 @@ public class Clientes {
     private String imagen;
 
 
-    @OneToMany(mappedBy = "clientes", cascade = {CascadeType.MERGE,CascadeType.DETACH}, orphanRemoval = false)
+    @OneToMany(mappedBy = "clientes", cascade = {CascadeType.MERGE,CascadeType.DETACH})
     private List<PedidosClientes> pedidosClientes = new ArrayList<>();
 
 

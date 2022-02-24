@@ -133,8 +133,8 @@
 
                         <div class="form-group"
                              th:classappend="${#fields.hasErrors('productos')} ? 'has-error'">
-                            <label class="control-label">Producto</label> <select
-                                th:field="*{productos}" class="form-control">
+                            <label class="control-label">Producto</label>
+                            <select th:field="*{productos}" class="form-control">
                             <option value="-1">---</option>
                             <option th:each="productos : ${productos}"
                                     th:value="${productos.id}" th:text="${productos.nombre}">Producto</option>

@@ -43,7 +43,7 @@ public class Empleados {
     private String password;
 
 
-    @OneToMany(mappedBy = "empleados", cascade = {CascadeType.MERGE}, orphanRemoval = false)
+    @OneToMany(mappedBy = "empleados", cascade = {CascadeType.MERGE})
     private List<PedidosClientes> pedidosClientes = new ArrayList<>();
 
 
